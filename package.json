@@ -1,0 +1,23 @@
+{
+  "name": "ethereum-alarm-clock",
+  "version": "0.1.0",
+  "description": "Ethereum Alarm Clock Bot",
+  "private": true,
+  "author": {
+    "name": "Dennoh Peter",
+    "email": "mail@dennohpeter.com",
+    "twitter": "@dennohpeter"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node-dev src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^18.11.3",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
+    "telegraf": "^4.10.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  }
+}
