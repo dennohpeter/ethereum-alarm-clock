@@ -38,4 +38,10 @@ export const config = {
    * @type {string[]}
    */
   WHITELISTED_USERS: ['251669027'],
+
+  /**
+   * @description SUBGRAPH_URL is the URL of the GraphQL endpoint
+   * @type {string}
+   */
+  SUBGRAPH_URL: process.env.SUBGRAPH_URL!,
 };

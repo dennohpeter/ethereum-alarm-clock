@@ -1,0 +1,18 @@
+type CreatedRequest @entity {
+  id: ID!
+  request: Bytes! # address
+  owner: Bytes! # address
+  bucket: BigInt!
+  callGas: BigInt!
+  callValue: BigInt!
+  windowSize: BigInt!
+  windowStart: BigInt!
+  claimWindowSize: BigInt!
+  temporalUnit: BigInt!
+  freezePeriod: BigInt!
+  gasPrice: BigInt!
+  reservedWindowSize: BigInt!
+  fee: BigInt!
+  bounty: BigInt!
+  requiredDeposit: BigInt!
+}

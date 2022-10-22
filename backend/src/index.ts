@@ -1,9 +1,9 @@
-import { mempool } from './core';
+import { screener } from './core';
 
 const Main = async () => {
   console.info(`Starting...\n- - -`);
 
-  mempool.init();
+  screener.init();
 };
 
 Main();

@@ -1,0 +1,26 @@
+specVersion: 0.0.4
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: RequestFactory
+    network: mainnet
+    source:
+      address: "0xFf5c4B7EC93dd70b862aF027Bb7f3D9900002c4D"
+      abi: RequestFactory
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - CloneCreated
+        - RequestCreated
+      abis:
+        - name: RequestFactory
+          file: RequestFactory/abis/RequestFactory.json
+      eventHandlers:
+        - event: CloneCreated(indexed address,address)
+          handler: handleCloneCreated
+        - event: RequestCreated(address,indexed address,indexed int256,uint256[12])
+          handler: handleRequestCreated
+      file: RequestFactory/RequestFactory.wasm
