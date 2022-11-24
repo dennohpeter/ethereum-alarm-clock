@@ -27,7 +27,6 @@ class Screener {
         query,
       },
     });
-    console.log({ data });
 
     let { createdRequests, errors } = data?.data || data;
 
@@ -52,15 +51,18 @@ class Screener {
     }[]
   ) => {
     console.log(`Processing ${requests.length} requests...`);
-    try {
-      await Promise.all(
-        requests.map(async ({ request, windowSize, windowStart, freezePeriod }) => {
-          alarmClock.cancel(request);
-        })
-      );
-    } catch (error) {
-      console.log({ error });
+    // await Promise.all(
+    // requests.map(async ({ request, windowSize, windowStart, freezePeriod }) => {
+    for (let i = 0; i < requests.length; i++) {
+      let { request, windowSize, windowStart, freezePeriod } = requests[i];
+      try {
+        console.log(`Processing request ${i + 1} of ${requests.length}...`);
+        await alarmClock.cancel(request);
+      } catch (error) {
+        console.log({ error });
+      }
     }
+    // );
 
     console.log('Done processing requests');
     console.log('- - -');
